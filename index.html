@@ -269,65 +269,51 @@
             background: var(--primary);
         }
 
-        /* Room Types */
-        .rooms {
+        /* Pricing */
+        .pricing {
             padding: 4rem 2rem;
             background: var(--light);
         }
 
-        .rooms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
+        .pricing-list {
+            max-width: 500px;
             margin: 0 auto;
-        }
-
-        .room-card {
             background: white;
             border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid #ddd;
+            border: 2px dashed #ccc;
+            padding: 1.5rem 2rem;
         }
 
-        .room-header {
-            background: var(--primary);
-            color: white;
-            padding: 1.5rem;
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.2rem;
+        }
+
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-item .service {
+            color: var(--dark);
+        }
+
+        .pricing-item .price {
+            color: var(--primary);
+            font-weight: 600;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .pricing-note {
             text-align: center;
-        }
-
-        .room-header.premium {
-            background: var(--warm);
-        }
-
-        .room-header.luxury {
-            background: var(--accent);
-        }
-
-        .room-price {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .room-price span {
-            font-size: 1rem;
-            font-weight: 400;
-        }
-
-        .room-features {
-            padding: 1.5rem;
-        }
-
-        .room-features li {
-            list-style: none;
-            padding: 0.5rem 0;
+            margin-top: 1.5rem;
             font-family: 'Patrick Hand', cursive;
             font-size: 1.1rem;
-        }
-
-        .room-features li::before {
-            content: '🐾 ';
+            color: #666;
         }
 
         /* Testimonials */
@@ -672,7 +658,8 @@
         <nav>
             <a href="#amenities">Amenities</a>
             <a href="#packing">What to Bring</a>
-            <a href="#rooms">Rooms</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#pricing">Pricing</a>
             <a href="#enquiry">Book Meow</a>
         </nav>
     </header>
@@ -781,52 +768,6 @@
         </p>
     </section>
 
-    <section class="rooms" id="rooms">
-        <h2 class="section-title">🛎️ Room Types</h2>
-        <div class="rooms-grid">
-            <div class="room-card">
-                <div class="room-header">
-                    <h3>The Cozy Corner</h3>
-                    <div class="room-price">FREE* <span>/night</span></div>
-                </div>
-                <ul class="room-features">
-                    <li>One standard cardboard box</li>
-                    <li>Access to the good sunbeam</li>
-                    <li>Twice-daily chin scratches</li>
-                    <li>WiFi (for your cat to ignore)</li>
-                    <li>Complimentary judgment looks</li>
-                </ul>
-            </div>
-            <div class="room-card">
-                <div class="room-header premium">
-                    <h3>The Fancy Feline Suite</h3>
-                    <div class="room-price">FREE* <span>/night</span></div>
-                </div>
-                <ul class="room-features">
-                    <li>Premium cardboard box (with lid!)</li>
-                    <li>Priority sunbeam access</li>
-                    <li>Unlimited treats (within reason)</li>
-                    <li>Personal laser pointer session</li>
-                    <li>Late checkout (they're cats, they decide)</li>
-                </ul>
-            </div>
-            <div class="room-card">
-                <div class="room-header luxury">
-                    <h3>The Royal Whiskers</h3>
-                    <div class="room-price">FREE* <span>/night</span></div>
-                </div>
-                <ul class="room-features">
-                    <li>An actual cat bed (revolutionary!)</li>
-                    <li>VIP window perch</li>
-                    <li>Gourmet wet food Wednesdays</li>
-                    <li>On-demand belly rubs (if permitted)</li>
-                    <li>24/7 human servant</li>
-                </ul>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 2rem; font-family: 'Patrick Hand', cursive; font-size: 1.2rem;">*Free = a bottle of wine and a funny story about your vacation</p>
-    </section>
-
     <section class="testimonials" id="reviews">
         <h2 class="section-title">😻 What Our Guests Say</h2>
         <div class="testimonial-grid">
@@ -873,6 +814,37 @@
                 <p class="testimonial-cat">Snack Security Officer, Box Inspector</p>
             </div>
         </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">💰 Pricing</h2>
+        <div class="pricing-list">
+            <div class="pricing-item">
+                <span class="service">Accommodation (per night)</span>
+                <span class="price">FREE*</span>
+            </div>
+            <div class="pricing-item">
+                <span class="service">Feeding & fresh water</span>
+                <span class="price">FREE*</span>
+            </div>
+            <div class="pricing-item">
+                <span class="service">Cuddles & playtime</span>
+                <span class="price">FREE*</span>
+            </div>
+            <div class="pricing-item">
+                <span class="service">Bird TV access</span>
+                <span class="price">FREE*</span>
+            </div>
+            <div class="pricing-item">
+                <span class="service">Instagram fame</span>
+                <span class="price">FREE*</span>
+            </div>
+            <div class="pricing-item">
+                <span class="service">Medication administration</span>
+                <span class="price">FREE*</span>
+            </div>
+        </div>
+        <p class="pricing-note">*Free = a bottle of wine and a funny story about your vacation</p>
     </section>
 
     <section class="enquiry" id="enquiry">
