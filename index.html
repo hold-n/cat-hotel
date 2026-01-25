@@ -330,11 +330,26 @@
             padding: 2rem;
             border-radius: 12px;
             border: 2px dashed #ccc;
+            text-align: center;
+        }
+
+        .testimonial-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background-size: cover;
+            background-position: center 55%;
+            border: 3px solid var(--primary);
+        }
+
+        .testimonial-photo.duo {
+            background-position: center 45%;
         }
 
         .testimonial-text {
             font-family: 'Patrick Hand', cursive;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 1rem;
         }
 
@@ -670,19 +685,34 @@
         <h2 class="section-title">😻 What Our Guests Say</h2>
         <div class="testimonial-grid">
             <div class="testimonial">
-                <p class="testimonial-text">Meow meow meow. Meow meow, meow meow meow meow. MEOW! 🐟</p>
-                <p class="testimonial-author">— Mr. Whiskers</p>
-                <p class="testimonial-cat">3-year-old Tabby, Professional Napper</p>
+                <div class="testimonial-photo" style="background-image: url('cloud.jpg'); object-position: center 55%;"></div>
+                <p class="testimonial-text">The fluffiest stay of my nine lives. Max understood my need for 47 brushing sessions per day. Will return with my entire winter coat.</p>
+                <p class="testimonial-author">— Cloud</p>
+                <p class="testimonial-cat">Majestic Floof, Professional Model</p>
             </div>
             <div class="testimonial">
-                <p class="testimonial-text">The cardboard box selection was *chef's kiss*. Ignored the fancy bed entirely. Would knock things off tables again. 10/10.</p>
-                <p class="testimonial-author">— Princess Fluffington</p>
-                <p class="testimonial-cat">5-year-old Persian, Part-time Diva</p>
+                <div class="testimonial-photo duo" style="background-image: url('chuchu_and_mia.jpg');"></div>
+                <p class="testimonial-text">We came as strangers, we left as... still strangers who tolerate each other. But the chair was excellent. Would judge again.</p>
+                <p class="testimonial-author">— Chuchu & Mia</p>
+                <p class="testimonial-cat">Dynamic Duo, Chair Acquisition Specialists</p>
             </div>
             <div class="testimonial">
-                <p class="testimonial-text">Finally, humans who understand that 3am is the appropriate time for zoomies. My servants at home could never.</p>
-                <p class="testimonial-author">— Sir Biscuits McPurrington</p>
-                <p class="testimonial-cat">2-year-old Orange Cat, Brain Cell Timeshare Participant</p>
+                <div class="testimonial-photo" style="background-image: url('nanysha.jpg'); background-position: 30% 28%;"></div>
+                <p class="testimonial-text">Found the PERFECT sunbeam. Stayed in it for 6 hours. No regrets. The floor is surprisingly comfortable when you're this relaxed.</p>
+                <p class="testimonial-author">— Nanysha</p>
+                <p class="testimonial-cat">Sunbeam Connoisseur, Professional Lounger</p>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-photo" style="background-image: url('semyon.jpg'); background-position: center 35%;"></div>
+                <p class="testimonial-text">Kitchen counter access? CHECK. Judging humans from high places? CHECK. Being orange and having thoughts? ...sometimes. 10/10.</p>
+                <p class="testimonial-author">— Semyon</p>
+                <p class="testimonial-cat">Orange Brain Cell Timeshare Participant</p>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-photo" style="background-image: url('stinky.jpg'); background-position: center 38%;"></div>
+                <p class="testimonial-text">Finally, humans who understand that I need 17 blankets at all times. The heating was acceptable. My wrinkles remained moisturized.</p>
+                <p class="testimonial-author">— Stinky</p>
+                <p class="testimonial-cat">Hairless Royalty, Warmth Enthusiast</p>
             </div>
         </div>
     </section>
