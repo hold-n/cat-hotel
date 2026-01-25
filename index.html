@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Hotel 🐱 | Where Every Stay is Purrfect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff6b9d;
+            --secondary: #ffd93d;
+            --accent: #6bcb77;
+            --dark: #2d3436;
+            --light: #fff9f0;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Floating cats background */
+        .floating-cats {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-cat {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #ff8fab 100%);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+        }
+
+        .logo span {
+            display: inline-block;
+            animation: wiggle 1s infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(180deg, #fff9f0 0%, #ffe4ec 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0 var(--secondary);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            font-family: 'Patrick Hand', cursive;
+        }
+
+        .star-rating {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .star-rating .paw {
+            color: var(--secondary);
+            display: inline-block;
+            animation: pulse 1s infinite;
+        }
+
+        .star-rating .paw:nth-child(2) { animation-delay: 0.1s; }
+        .star-rating .paw:nth-child(3) { animation-delay: 0.2s; }
+        .star-rating .paw:nth-child(4) { animation-delay: 0.3s; }
+        .star-rating .paw:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .hero-cat {
+            font-size: 8rem;
+            display: block;
+            margin: 2rem auto;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.3rem;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(107, 203, 119, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(107, 203, 119, 0.5);
+        }
+
+        /* Amenities */
+        .amenities {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .amenity-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 3px dashed transparent;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+        }
+
+        .amenity-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .amenity-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .amenity-card p {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Room Types */
+        .rooms {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #ffe4ec 0%, var(--light) 100%);
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .room-card:hover {
+            transform: scale(1.02);
+        }
+
+        .room-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .room-header.premium {
+            background: linear-gradient(135deg, var(--secondary) 0%, #ffb347 100%);
+        }
+
+        .room-header.luxury {
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+        }
+
+        .room-price {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .room-price span {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .room-features {
+            padding: 1.5rem;
+        }
+
+        .room-features li {
+            list-style: none;
+            padding: 0.5rem 0;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+        }
+
+        .room-features li::before {
+            content: '🐾 ';
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonial-cat {
+            font-style: italic;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Enquiry Form */
+        .enquiry {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--light) 0%, #ffe4ec 100%);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 3px solid #eee;
+            border-radius: 15px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, #ff8fab 100%);
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            font-size: 1.3rem;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02);
+        }
+
+        /* Form Success Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 500px;
+            margin: 1rem;
+            animation: modalPop 0.3s ease-out;
+        }
+
+        @keyframes modalPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-cat {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .modal-close {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-family: 'Fredoka', sans-serif;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer .footer-cat {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .fine-print {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating cats background -->
+    <div class="floating-cats" id="floatingCats"></div>
+
+    <header>
+        <div class="logo"><span>🐱</span> Cat Hotel</div>
+        <nav>
+            <a href="#amenities">Amenities</a>
+            <a href="#rooms">Rooms</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#enquiry">Book Meow</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="star-rating">
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+            <span style="margin-left: 0.5rem;">5-Paw Rating</span>
+        </div>
+        <h1>Welcome to Cat Hotel</h1>
+        <p class="tagline">Where every stay is purrfect! ✨ Fur real, your cat will love it here.</p>
+        <span class="hero-cat">😺</span>
+        <p class="tagline">"You're kitten me! This place is the cat's meow!"<br>— Every cat ever</p>
+        <button class="cta-button" onclick="document.getElementById('enquiry').scrollIntoView({behavior: 'smooth'})">Book a Pawsome Stay 🐾</button>
+    </section>
+
+    <section class="amenities" id="amenities">
+        <h2 class="section-title">🏨 Ameowities</h2>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <div class="amenity-icon">🛏️</div>
+                <h3>Cozy Cat Beds</h3>
+                <p>Premium cardboard boxes AND actual beds. We know your cat will choose the box anyway.</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🍽️</div>
+                <h3>Fine Dining</h3>
+                <p>Gourmet meals served exactly 3 minutes late so your cat feels at home complaining.</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🪟</div>
+                <h3>Bird TV</h3>
+                <p>Window seats with 24/7 nature programming. Better than Netflix (for cats).</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🧶</div>
+                <h3>Spa & Recreation</h3>
+                <p>Unlimited scratching posts, laser pointer sessions, and mysterious red dot hunting.</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">💤</div>
+                <h3>Nap Consultants</h3>
+                <p>Professional sunbeam tracking ensures optimal napping conditions at all hours.</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">📸</div>
+                <h3>Photoshoots</h3>
+                <p>Daily attempts to photograph your cat. Results may vary based on cat's mood (grumpy).</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rooms" id="rooms">
+        <h2 class="section-title">🛎️ Room Types</h2>
+        <div class="rooms-grid">
+            <div class="room-card">
+                <div class="room-header">
+                    <h3>The Cozy Corner</h3>
+                    <div class="room-price">FREE* <span>/night</span></div>
+                </div>
+                <ul class="room-features">
+                    <li>One standard cardboard box</li>
+                    <li>Access to the good sunbeam</li>
+                    <li>Twice-daily chin scratches</li>
+                    <li>WiFi (for your cat to ignore)</li>
+                    <li>Complimentary judgment looks</li>
+                </ul>
+            </div>
+            <div class="room-card">
+                <div class="room-header premium">
+                    <h3>The Fancy Feline Suite</h3>
+                    <div class="room-price">FREE* <span>/night</span></div>
+                </div>
+                <ul class="room-features">
+                    <li>Premium cardboard box (with lid!)</li>
+                    <li>Priority sunbeam access</li>
+                    <li>Unlimited treats (within reason)</li>
+                    <li>Personal laser pointer session</li>
+                    <li>Late checkout (they're cats, they decide)</li>
+                </ul>
+            </div>
+            <div class="room-card">
+                <div class="room-header luxury">
+                    <h3>The Royal Whiskers</h3>
+                    <div class="room-price">FREE* <span>/night</span></div>
+                </div>
+                <ul class="room-features">
+                    <li>An actual cat bed (revolutionary!)</li>
+                    <li>VIP window perch</li>
+                    <li>Gourmet wet food Wednesdays</li>
+                    <li>On-demand belly rubs (if permitted)</li>
+                    <li>24/7 human servant</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; font-family: 'Patrick Hand', cursive; font-size: 1.2rem;">*Free = a bottle of wine and a funny story about your vacation</p>
+    </section>
+
+    <section class="testimonials" id="reviews">
+        <h2 class="section-title">😻 What Our Guests Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p class="testimonial-text">Meow meow meow. Meow meow, meow meow meow meow. MEOW! 🐟</p>
+                <p class="testimonial-author">— Mr. Whiskers</p>
+                <p class="testimonial-cat">3-year-old Tabby, Professional Napper</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">The cardboard box selection was *chef's kiss*. Ignored the fancy bed entirely. Would knock things off tables again. 10/10.</p>
+                <p class="testimonial-author">— Princess Fluffington</p>
+                <p class="testimonial-cat">5-year-old Persian, Part-time Diva</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">Finally, humans who understand that 3am is the appropriate time for zoomies. My servants at home could never.</p>
+                <p class="testimonial-author">— Sir Biscuits McPurrington</p>
+                <p class="testimonial-cat">2-year-old Orange Cat, Brain Cell Timeshare Participant</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="enquiry" id="enquiry">
+        <h2 class="section-title">📝 Book Your Cat's Stay</h2>
+        <div class="form-container">
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label>Your Name (The Human Servant)</label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Cat's Name (The Important One)</label>
+                    <input type="text" placeholder="Sir Meowsalot III" required>
+                </div>
+                <div class="form-group">
+                    <label>Cat's Royal Title</label>
+                    <select>
+                        <option>Lord/Lady of the Couch</option>
+                        <option>Duke/Duchess of Destruction</option>
+                        <option>Baron/Baroness of the Cardboard Box</option>
+                        <option>Count/Countess of the Keyboard</option>
+                        <option>His/Her Fluffiness</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-out Date</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Special Requirements</label>
+                    <textarea rows="4" placeholder="E.g., Requires exactly 47 treats per day, only drinks from the forbidden water glass, needs 18 hours of naps minimum..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Room Type</label>
+                    <select>
+                        <option>The Cozy Corner (best value)</option>
+                        <option>The Fancy Feline Suite (bougie)</option>
+                        <option>The Royal Whiskers (ultimate luxury)</option>
+                        <option>Wherever my cat decides to sit</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit Booking Request 🐾</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <div class="modal-cat">😸</div>
+            <h2>Purrfect!</h2>
+            <p>Your booking request has been sent to our highly trained team of... well, just me. I'll get back to you faster than a cat knocking things off a table!</p>
+            <p><strong>Just kidding, this form doesn't actually do anything.</strong> But seriously, hit me up if you need a cat sitter! 🐱</p>
+            <button class="modal-close" onclick="closeModal()">Got it, fur real!</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-cat">😺🏨😺</div>
+        <p>Cat Hotel — Established whenever my friends started leaving their cats with me</p>
+        <p>📍 Location: Somewhere with good sunbeams</p>
+        <p>📞 Contact: Meow at me (you have my number)</p>
+        <p class="fine-print">* Not an actual hotel. No cats were harmed in the making of this website. <br>Some cats were mildly inconvenienced by excessive cuddles. Results may vary. <br>Side effects include purring, kneading, and spontaneous zoomies.</p>
+    </footer>
+
+    <script>
+        // Create floating cats
+        const floatingCats = document.getElementById('floatingCats');
+        const catEmojis = ['🐱', '😺', '😸', '😹', '🐾', '🐈', '🐈‍⬛'];
+        
+        for (let i = 0; i < 15; i++) {
+            const cat = document.createElement('div');
+            cat.className = 'floating-cat';
+            cat.textContent = catEmojis[Math.floor(Math.random() * catEmojis.length)];
+            cat.style.left = Math.random() * 100 + '%';
+            cat.style.animationDuration = (15 + Math.random() * 20) + 's';
+            cat.style.animationDelay = -Math.random() * 20 + 's';
+            floatingCats.appendChild(cat);
+        }
+
+        // Form submission
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('successModal').classList.add('show');
+        });
+
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('show');
+        }
+
+        // Close modal on overlay click
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
