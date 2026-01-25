@@ -20,13 +20,14 @@ A half-joke, half-real landing page for "Cat Hotel" - a cat-sitting service run 
 - **Mobile-first**: Must look good on phones
 
 ## Content Guidelines
-- **Hosts**: Always mention Max & Mira as the hosts
+- **Location**: Dublin, Ireland (mentioned in header and footer)
+- **Hosts**: Always mention Max & Mira as the hosts (prominent in hero section)
 - **Bring your own supplies**: Make it clear (playfully) that guests must bring:
-  - Litterbox ("The Throne") - MUST BRING
+  - Litterbox + Litter (combined into one tile) - MUST BRING
   - Cat food ("The Good Stuff") - MUST BRING  
-  - Litter - MUST BRING
+  - Scratching board - RECOMMENDED (we don't have one)
   - Toys, blankets, medications - recommended
-- **Pricing**: Everything is "FREE*" where * = a bottle of wine and a funny story
+- **Pricing**: Simple list of services, all "FREE*" where * = a bottle of wine and a funny story
 - **Testimonials**: Use real cat photos, full body visible (no cropping cats), pill-shaped frames
 
 ## Cat Photos
@@ -35,22 +36,23 @@ A half-joke, half-real landing page for "Cat Hotel" - a cat-sitting service run 
 - Pill-shaped containers (tall rounded rectangles) work well for portrait photos
 - Current guests: Cloud, Chuchu & Mia, Nanysha, Semyon, Stinky, Lumos, Steve
 
-## Sections
-1. **Hero**: 5-paw rating, welcome message, hosts intro, CTA
+## Sections (in order)
+1. **Hero**: 5-paw rating, welcome message, prominent Max & Mira intro, CTA
 2. **Ameowities**: What the hotel offers (with humor)
-3. **Packing List**: What to bring - critical for actual use
-4. **Room Types**: Joke tiers, all free
-5. **Testimonials**: Real cats with funny reviews
+3. **Reviews**: Real cats with funny reviews and photos
+4. **Pricing**: Simple list of services, all free
+5. **Packing List**: What to bring - critical for actual use
 6. **Booking Form**: Collects info but openly admits it does nothing
 7. **Footer**: Contact info, reminder about what to bring
 
 ## Technical Notes
 - Single HTML file with embedded CSS
 - No JavaScript frameworks needed
-- SVG favicon: purple house with cat ears
+- SVG favicon: simple purple roof with cat ears, cream walls (minimal details for 32x32 legibility)
 - Served with `busybox httpd`
 - Photo lightbox: clicking/tapping cat photos opens full-size view
 - Escape key closes modals and lightbox
+- Page title: "Cat Hotel 🐱 by Max & Mira | Dublin"
 
 ## Cat-Specific Notes
 Some cats have specific stories to incorporate in reviews:
@@ -59,3 +61,13 @@ Some cats have specific stories to incorporate in reviews:
 - **Cloud**: Ate a plastic bag once ("Plastic Bag Connoisseur")
 - **Lumos**: Tried to escape through window once ("Amateur Escape Artist")
 - **Stinky**: Loves blankets and warmth (hairless cat)
+
+## Real Hotel Details
+Things that are actually true (incorporate into amenities/descriptions):
+- **Bird TV**: Big window with a tree outside, lots of birds
+- **Sleeping**: Bed, couch, chairs available - cats often prefer the carpet
+- **Plants**: Cats eat the houseplants despite being told not to
+- **Recreation**: No scratching post or laser pointer; cats chase watch reflections and have zoomies
+- **Lost toys**: Mystery collection behind the couch from previous guests
+- **Instagram**: Cats may appear on Max & Mira's stories
+- **Attention**: Cats get lots of attention, probably more than they want
