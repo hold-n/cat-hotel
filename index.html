@@ -15,11 +15,13 @@
         }
 
         :root {
-            --primary: #ff6b9d;
-            --secondary: #ffd93d;
-            --accent: #6bcb77;
-            --dark: #2d3436;
-            --light: #fff9f0;
+            --primary: #7c3aed;
+            --secondary: #a78bfa;
+            --accent: #c2410c;
+            --warm: #92400e;
+            --dark: #1c1917;
+            --light: #faf5f0;
+            --cream: #f5ebe0;
         }
 
         body {
@@ -55,12 +57,12 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, #ff8fab 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #5b21b6 100%);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -98,7 +100,7 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(180deg, #fff9f0 0%, #ffe4ec 100%);
+            background: linear-gradient(180deg, var(--light) 0%, var(--cream) 100%);
             padding: 4rem 2rem;
             text-align: center;
             position: relative;
@@ -108,7 +110,7 @@
             font-size: 3.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
-            text-shadow: 3px 3px 0 var(--secondary);
+            text-shadow: 3px 3px 0 var(--warm);
         }
 
         .hero .tagline {
@@ -124,7 +126,7 @@
         }
 
         .star-rating .paw {
-            color: var(--secondary);
+            color: var(--warm);
             display: inline-block;
             animation: pulse 1s infinite;
         }
@@ -152,7 +154,7 @@
         }
 
         .cta-button {
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent) 0%, #b91c1c 100%);
             color: white;
             border: none;
             padding: 1rem 2.5rem;
@@ -162,12 +164,12 @@
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(107, 203, 119, 0.4);
+            box-shadow: 0 4px 15px rgba(194, 65, 12, 0.4);
         }
 
         .cta-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(107, 203, 119, 0.5);
+            box-shadow: 0 6px 25px rgba(194, 65, 12, 0.5);
         }
 
         /* Amenities */
@@ -202,7 +204,7 @@
 
         .amenity-card:hover {
             transform: translateY(-10px);
-            border-color: var(--secondary);
+            border-color: var(--warm);
         }
 
         .amenity-icon {
@@ -221,10 +223,76 @@
             color: #666;
         }
 
+        /* Packing List */
+        .packing {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, white 0%, var(--cream) 100%);
+        }
+
+        .packing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .packing-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid #e5e5e5;
+            position: relative;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .packing-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .packing-item.must-have {
+            border-color: var(--accent);
+            background: linear-gradient(180deg, white 0%, #fef2f2 100%);
+        }
+
+        .packing-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .packing-item h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .packing-item p {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge.optional {
+            background: var(--primary);
+        }
+
         /* Room Types */
         .rooms {
             padding: 4rem 2rem;
-            background: linear-gradient(180deg, #ffe4ec 0%, var(--light) 100%);
+            background: linear-gradient(180deg, var(--cream) 0%, var(--light) 100%);
         }
 
         .rooms-grid {
@@ -255,11 +323,11 @@
         }
 
         .room-header.premium {
-            background: linear-gradient(135deg, var(--secondary) 0%, #ffb347 100%);
+            background: linear-gradient(135deg, var(--warm) 0%, #78350f 100%);
         }
 
         .room-header.luxury {
-            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #b91c1c 100%);
         }
 
         .room-price {
@@ -340,7 +408,7 @@
         /* Enquiry Form */
         .enquiry {
             padding: 4rem 2rem;
-            background: linear-gradient(180deg, var(--light) 0%, #ffe4ec 100%);
+            background: linear-gradient(180deg, var(--light) 0%, var(--cream) 100%);
         }
 
         .form-container {
@@ -349,7 +417,7 @@
             background: white;
             padding: 3rem;
             border-radius: 30px;
-            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.2);
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.15);
         }
 
         .form-group {
@@ -384,7 +452,7 @@
 
         .submit-btn {
             width: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, #ff8fab 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #5b21b6 100%);
             color: white;
             border: none;
             padding: 1.2rem;
@@ -451,7 +519,7 @@
         }
 
         .modal-close {
-            background: var(--accent);
+            background: var(--primary);
             color: white;
             border: none;
             padding: 0.8rem 2rem;
@@ -510,8 +578,8 @@
         <div class="logo"><span>🐱</span> Cat Hotel</div>
         <nav>
             <a href="#amenities">Amenities</a>
+            <a href="#packing">What to Bring</a>
             <a href="#rooms">Rooms</a>
-            <a href="#reviews">Reviews</a>
             <a href="#enquiry">Book Meow</a>
         </nav>
     </header>
@@ -528,7 +596,7 @@
         <h1>Welcome to Cat Hotel</h1>
         <p class="tagline">Where every stay is purrfect! ✨ Fur real, your cat will love it here.</p>
         <span class="hero-cat">😺</span>
-        <p class="tagline">"You're kitten me! This place is the cat's meow!"<br>— Every cat ever</p>
+        <p class="tagline">Hosted with love by <strong>Max & Mira</strong> 💜<br>"You're kitten me! This place is the cat's meow!"</p>
         <button class="cta-button" onclick="document.getElementById('enquiry').scrollIntoView({behavior: 'smooth'})">Book a Pawsome Stay 🐾</button>
     </section>
 
@@ -566,6 +634,54 @@
                 <p>Daily attempts to photograph your cat. Results may vary based on cat's mood (grumpy).</p>
             </div>
         </div>
+    </section>
+
+    <section class="packing" id="packing">
+        <h2 class="section-title">🧳 The Royal Packing List</h2>
+        <p style="text-align: center; font-family: 'Patrick Hand', cursive; font-size: 1.3rem; max-width: 700px; margin: 0 auto 2rem; color: #666;">
+            Listen, we love your cat. But your cat has... <em>opinions</em>. To ensure maximum comfort (and minimum "where's MY food" glares), please bring:
+        </p>
+        <div class="packing-grid">
+            <div class="packing-item must-have">
+                <div class="packing-icon">🪣</div>
+                <h3>The Throne (Litterbox)</h3>
+                <p>Your cat's personal bathroom. We're not judging, but they definitely will if it's not THEIR box.</p>
+                <span class="badge">MUST BRING</span>
+            </div>
+            <div class="packing-item must-have">
+                <div class="packing-icon">🍽️</div>
+                <h3>The Good Stuff (Food)</h3>
+                <p>Bring their usual food. Cats are creatures of habit and will stage a hunger strike otherwise.</p>
+                <span class="badge">MUST BRING</span>
+            </div>
+            <div class="packing-item must-have">
+                <div class="packing-icon">🧪</div>
+                <h3>Litter</h3>
+                <p>Enough for the stay. Unless you want your cat to leave you a "present" somewhere creative.</p>
+                <span class="badge">MUST BRING</span>
+            </div>
+            <div class="packing-item">
+                <div class="packing-icon">🧸</div>
+                <h3>Favorite Toys</h3>
+                <p>Mr. Squeaky? The crinkle ball? That random hair tie they're obsessed with? Bring it.</p>
+                <span class="badge optional">RECOMMENDED</span>
+            </div>
+            <div class="packing-item">
+                <div class="packing-icon">🛏️</div>
+                <h3>Cozy Blanket</h3>
+                <p>Something that smells like home. Helps with the "why have you abandoned me" phase.</p>
+                <span class="badge optional">RECOMMENDED</span>
+            </div>
+            <div class="packing-item">
+                <div class="packing-icon">💊</div>
+                <h3>Medications</h3>
+                <p>If your cat needs any meds, include clear instructions. We'll handle the rest (and the scratches).</p>
+                <span class="badge optional">IF NEEDED</span>
+            </div>
+        </div>
+        <p style="text-align: center; font-family: 'Patrick Hand', cursive; font-size: 1.2rem; margin-top: 2rem; color: var(--primary);">
+            💡 Pro tip: Bring a little extra food & litter. Cats are unpredictable. So are vacations.
+        </p>
     </section>
 
     <section class="rooms" id="rooms">
@@ -689,16 +805,17 @@
             <div class="modal-cat">😸</div>
             <h2>Purrfect!</h2>
             <p>Your booking request has been sent to our highly trained team of... well, just me. I'll get back to you faster than a cat knocking things off a table!</p>
-            <p><strong>Just kidding, this form doesn't actually do anything.</strong> But seriously, hit me up if you need a cat sitter! 🐱</p>
+            <p><strong>Just kidding, this form doesn't actually do anything.</strong> But seriously, hit up Max & Mira if you need a cat sitter! 🐱</p>
             <button class="modal-close" onclick="closeModal()">Got it, fur real!</button>
         </div>
     </div>
 
     <footer>
         <div class="footer-cat">😺🏨😺</div>
-        <p>Cat Hotel — Established whenever my friends started leaving their cats with me</p>
+        <p>Cat Hotel — Lovingly operated by Max & Mira</p>
         <p>📍 Location: Somewhere with good sunbeams</p>
-        <p>📞 Contact: Meow at me (you have my number)</p>
+        <p>📞 Contact: Meow at us (you have our number)</p>
+        <p>🧳 Remember: Litterbox, food, litter, toys!</p>
         <p class="fine-print">* Not an actual hotel. No cats were harmed in the making of this website. <br>Some cats were mildly inconvenienced by excessive cuddles. Results may vary. <br>Side effects include purring, kneading, and spontaneous zoomies.</p>
     </footer>
 
