@@ -49,3 +49,13 @@ A half-joke, half-real landing page for "Cat Hotel" - a cat-sitting service run 
 - No JavaScript frameworks needed
 - SVG favicon: purple house with cat ears
 - Served with `busybox httpd`
+- Photo lightbox: clicking/tapping cat photos opens full-size view
+- Escape key closes modals and lightbox
+
+## Cat-Specific Notes
+Some cats have specific stories to incorporate in reviews:
+- **Nanysha**: Stayed twice, first time for 6 months (don't joke about "moving in permanently" - owners might misread)
+- **Semyon**: Visited twice (repeat guest, "definitely not attached")
+- **Cloud**: Ate a plastic bag once ("Plastic Bag Connoisseur")
+- **Lumos**: Tried to escape through window once ("Amateur Escape Artist")
+- **Stinky**: Loves blankets and warmth (hairless cat)
