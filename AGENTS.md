@@ -33,7 +33,7 @@ A half-joke, half-real landing page for "Cat Hotel" - a cat-sitting service run 
 - Show the entire cat, never crop body parts
 - Use `background-size: contain` to fit full cat in frame
 - Pill-shaped containers (tall rounded rectangles) work well for portrait photos
-- Current guests: Cloud, Chuchu & Mia, Nanysha, Semyon, Stinky
+- Current guests: Cloud, Chuchu & Mia, Nanysha, Semyon, Stinky, Lumos, Steve
 
 ## Sections
 1. **Hero**: 5-paw rating, welcome message, hosts intro, CTA
