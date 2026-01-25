@@ -122,10 +122,28 @@
             color: var(--warm);
         }
 
+        .hosts-intro {
+            margin: 2rem auto;
+        }
+
         .hero-cat {
-            font-size: 6rem;
+            font-size: 5rem;
             display: block;
-            margin: 1.5rem auto;
+            margin: 0.5rem auto;
+        }
+
+        .hosts-text {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.3rem;
+            margin: 0;
+            color: #666;
+        }
+
+        .hosts-names {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0.3rem 0;
         }
 
         .cta-button {
@@ -572,8 +590,12 @@
             }
 
             .hero-cat {
-                font-size: 4rem;
-                margin: 1rem auto;
+                font-size: 3rem;
+                margin: 0.5rem auto;
+            }
+
+            .hosts-names {
+                font-size: 2rem;
             }
 
             .star-rating {
@@ -666,8 +688,12 @@
         </div>
         <h1>Welcome to Cat Hotel</h1>
         <p class="tagline">Where every stay is purrfect! ✨ Fur real, your cat will love it here.</p>
-        <span class="hero-cat">😺</span>
-        <p class="tagline">Hosted with love by <strong>Max & Mira</strong> 💜<br>"You're kitten me! This place is the cat's meow!"</p>
+        <div class="hosts-intro">
+            <span class="hero-cat">😺</span>
+            <p class="hosts-text">Hosted with love by</p>
+            <p class="hosts-names">Max & Mira</p>
+        </div>
+        <p class="tagline">"You're kitten me! This place is the cat's meow!"</p>
         <button class="cta-button" onclick="document.getElementById('enquiry').scrollIntoView({behavior: 'smooth'})">Book a Pawsome Stay 🐾</button>
     </section>
 
