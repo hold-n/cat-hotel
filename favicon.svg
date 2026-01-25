@@ -1,12 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <!-- House body -->
-  <rect x="20" y="45" width="60" height="45" rx="4" fill="#f5ebe0"/>
-  <!-- Roof with cat ears -->
-  <polygon points="10,50 50,15 90,50" fill="#7c3aed"/>
-  <polygon points="30,32 40,15 50,32" fill="#7c3aed"/>
-  <polygon points="50,32 60,15 70,32" fill="#7c3aed"/>
-  <!-- Simple cat face -->
-  <circle cx="40" cy="70" r="4" fill="#7c3aed"/>
-  <circle cx="60" cy="70" r="4" fill="#7c3aed"/>
-  <ellipse cx="50" cy="80" rx="4" ry="3" fill="#c2410c"/>
+  <rect x="20" y="50" width="60" height="40" rx="4" fill="#f5ebe0"/>
+  <!-- Roof -->
+  <polygon points="15,55 50,25 85,55" fill="#7c3aed"/>
+  <!-- Cat ears -->
+  <polygon points="25,30 38,5 50,30" fill="#7c3aed"/>
+  <polygon points="50,30 62,5 75,30" fill="#7c3aed"/>
 </svg>
