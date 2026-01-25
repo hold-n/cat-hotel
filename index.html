@@ -57,12 +57,11 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, #5b21b6 100%);
+            background: var(--primary);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -77,12 +76,6 @@
 
         .logo span {
             display: inline-block;
-            animation: wiggle 1s infinite;
-        }
-
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(-3deg); }
-            50% { transform: rotate(3deg); }
         }
 
         nav a {
@@ -95,12 +88,12 @@
         }
 
         nav a:hover {
-            transform: scale(1.1);
+            opacity: 0.8;
         }
 
         /* Hero */
         .hero {
-            background: linear-gradient(180deg, var(--light) 0%, var(--cream) 100%);
+            background: var(--light);
             padding: 4rem 2rem;
             text-align: center;
             position: relative;
@@ -110,7 +103,6 @@
             font-size: 3.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
-            text-shadow: 3px 3px 0 var(--warm);
         }
 
         .hero .tagline {
@@ -127,34 +119,16 @@
 
         .star-rating .paw {
             color: var(--warm);
-            display: inline-block;
-            animation: pulse 1s infinite;
-        }
-
-        .star-rating .paw:nth-child(2) { animation-delay: 0.1s; }
-        .star-rating .paw:nth-child(3) { animation-delay: 0.2s; }
-        .star-rating .paw:nth-child(4) { animation-delay: 0.3s; }
-        .star-rating .paw:nth-child(5) { animation-delay: 0.4s; }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
         }
 
         .hero-cat {
-            font-size: 8rem;
+            font-size: 6rem;
             display: block;
-            margin: 2rem auto;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            margin: 1.5rem auto;
         }
 
         .cta-button {
-            background: linear-gradient(135deg, var(--accent) 0%, #b91c1c 100%);
+            background: var(--accent);
             color: white;
             border: none;
             padding: 1rem 2.5rem;
@@ -163,13 +137,11 @@
             font-weight: 600;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(194, 65, 12, 0.4);
+            transition: all 0.2s;
         }
 
         .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(194, 65, 12, 0.5);
+            opacity: 0.85;
         }
 
         /* Amenities */
@@ -194,17 +166,11 @@
         }
 
         .amenity-card {
-            background: var(--light);
+            background: var(--cream);
             padding: 2rem;
-            border-radius: 20px;
+            border-radius: 15px;
             text-align: center;
-            transition: transform 0.3s;
-            border: 3px dashed transparent;
-        }
-
-        .amenity-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--warm);
+            border: 2px dashed #ccc;
         }
 
         .amenity-icon {
@@ -226,7 +192,7 @@
         /* Packing List */
         .packing {
             padding: 4rem 2rem;
-            background: linear-gradient(180deg, white 0%, var(--cream) 100%);
+            background: var(--cream);
         }
 
         .packing-grid {
@@ -240,20 +206,15 @@
         .packing-item {
             background: white;
             padding: 1.5rem;
-            border-radius: 20px;
+            border-radius: 12px;
             text-align: center;
-            border: 3px solid #e5e5e5;
+            border: 2px solid #ddd;
             position: relative;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .packing-item:hover {
-            transform: translateY(-5px);
         }
 
         .packing-item.must-have {
             border-color: var(--accent);
-            background: linear-gradient(180deg, white 0%, #fef2f2 100%);
+            border-width: 3px;
         }
 
         .packing-icon {
@@ -292,7 +253,7 @@
         /* Room Types */
         .rooms {
             padding: 4rem 2rem;
-            background: linear-gradient(180deg, var(--cream) 0%, var(--light) 100%);
+            background: var(--light);
         }
 
         .rooms-grid {
@@ -305,14 +266,9 @@
 
         .room-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .room-card:hover {
-            transform: scale(1.02);
+            border: 2px solid #ddd;
         }
 
         .room-header {
@@ -323,11 +279,11 @@
         }
 
         .room-header.premium {
-            background: linear-gradient(135deg, var(--warm) 0%, #78350f 100%);
+            background: var(--warm);
         }
 
         .room-header.luxury {
-            background: linear-gradient(135deg, var(--accent) 0%, #b91c1c 100%);
+            background: var(--accent);
         }
 
         .room-price {
@@ -370,28 +326,16 @@
         }
 
         .testimonial {
-            background: var(--light);
+            background: var(--cream);
             padding: 2rem;
-            border-radius: 20px;
-            position: relative;
-        }
-
-        .testimonial::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.3;
-            position: absolute;
-            top: 10px;
-            left: 20px;
+            border-radius: 12px;
+            border: 2px dashed #ccc;
         }
 
         .testimonial-text {
             font-family: 'Patrick Hand', cursive;
             font-size: 1.2rem;
             margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
         }
 
         .testimonial-author {
@@ -400,7 +344,6 @@
         }
 
         .testimonial-cat {
-            font-style: italic;
             color: #888;
             font-size: 0.9rem;
         }
@@ -408,7 +351,7 @@
         /* Enquiry Form */
         .enquiry {
             padding: 4rem 2rem;
-            background: linear-gradient(180deg, var(--light) 0%, var(--cream) 100%);
+            background: var(--cream);
         }
 
         .form-container {
@@ -416,8 +359,8 @@
             margin: 0 auto;
             background: white;
             padding: 3rem;
-            border-radius: 30px;
-            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.15);
+            border-radius: 12px;
+            border: 2px solid #ddd;
         }
 
         .form-group {
@@ -435,12 +378,11 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            border: 3px solid #eee;
-            border-radius: 15px;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
             font-family: 'Patrick Hand', cursive;
             font-size: 1.1rem;
-            transition: border-color 0.3s;
         }
 
         .form-group input:focus,
@@ -452,20 +394,19 @@
 
         .submit-btn {
             width: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, #5b21b6 100%);
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 1.2rem;
-            font-size: 1.3rem;
+            padding: 1rem;
+            font-size: 1.2rem;
             font-family: 'Fredoka', sans-serif;
             font-weight: 600;
-            border-radius: 15px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: transform 0.3s;
         }
 
         .submit-btn:hover {
-            transform: scale(1.02);
+            opacity: 0.85;
         }
 
         /* Form Success Modal */
@@ -488,17 +429,12 @@
 
         .modal {
             background: white;
-            padding: 3rem;
-            border-radius: 30px;
+            padding: 2.5rem;
+            border-radius: 12px;
             text-align: center;
             max-width: 500px;
             margin: 1rem;
-            animation: modalPop 0.3s ease-out;
-        }
-
-        @keyframes modalPop {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            border: 2px solid #ddd;
         }
 
         .modal-cat {
@@ -639,7 +575,7 @@
     <section class="packing" id="packing">
         <h2 class="section-title">🧳 The Royal Packing List</h2>
         <p style="text-align: center; font-family: 'Patrick Hand', cursive; font-size: 1.3rem; max-width: 700px; margin: 0 auto 2rem; color: #666;">
-            Listen, we love your cat. But your cat has... <em>opinions</em>. To ensure maximum comfort (and minimum "where's MY food" glares), please bring:
+            Listen, we love your cat. But your cat has opinions. Strong ones. To ensure maximum comfort (and minimum "where's MY food" glares), please bring:
         </p>
         <div class="packing-grid">
             <div class="packing-item must-have">
