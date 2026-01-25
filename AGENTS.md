@@ -1,5 +1,7 @@
 # Cat Hotel Website - Guiding Principles
 
+> **Note to future agents**: Keep this file updated! When you make design decisions, add new features, or change implementation details, document them here. This file is the source of truth for how this website should look and behave.
+
 ## Purpose
 A half-joke, half-real landing page for "Cat Hotel" - a cat-sitting service run by Max & Mira for friends. The site should be funny enough to share as a joke, but legitimate enough that friends might actually use it to arrange cat-sitting.
 
