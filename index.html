@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Fredoka:wght@400;600;700&family=Caveat:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -26,7 +26,7 @@
         }
 
         body {
-            font-family: 'Fredoka', sans-serif;
+            font-family: 'Fredoka', 'Comfortaa', sans-serif;
             background: var(--light);
             color: var(--dark);
             overflow-x: hidden;
@@ -35,6 +35,31 @@
         /* Language switching */
         .lang-en .ru, .lang-ru .en { display: none; }
         .lang-en .en, .lang-ru .ru { display: inline; }
+
+        /* Cyrillic font overrides */
+        .lang-ru body,
+        .lang-ru .logo,
+        .lang-ru nav a,
+        .lang-ru .cta-button,
+        .lang-ru .submit-btn,
+        .lang-ru h1, .lang-ru h2, .lang-ru h3,
+        .lang-ru .amenity-card h3,
+        .lang-ru .hosts-names,
+        .lang-ru .section-title,
+        .lang-ru .lang-toggle {
+            font-family: 'Comfortaa', sans-serif;
+        }
+
+        .lang-ru .tagline,
+        .lang-ru .testimonial-text,
+        .lang-ru .amenity-card p,
+        .lang-ru .packing-item p,
+        .lang-ru .pricing-note,
+        .lang-ru footer p,
+        .lang-ru label,
+        .lang-ru .packing-intro {
+            font-family: 'Comfortaa', sans-serif;
+        }
         .lang-en p.ru, .lang-ru p.en { display: none; }
         .lang-en p.en, .lang-ru p.ru { display: block; }
         .lang-en div.ru, .lang-ru div.en { display: none; }
