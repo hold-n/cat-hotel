@@ -1028,6 +1028,10 @@
             // Update toggle button
             document.getElementById('lang-en').classList.toggle('active', lang === 'en');
             document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+            // Update page title
+            document.title = lang === 'ru' 
+                ? 'Кошачий Отель 🐱 Макс и Мира | Дублин' 
+                : 'Cat Hotel 🐱 by Max & Mira | Dublin';
         }
 
         function toggleLang() {
