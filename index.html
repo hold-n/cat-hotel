@@ -1069,8 +1069,8 @@
 <span class="ru">Муррр!</span></h2>
             <p><span class="en">Your booking request has been sent to our highly trained team of... well, just us. We'll get back to you faster than a cat knocking things off a table!</span>
 <span class="ru">Ваша заявка отправлена нашей высококвалифицированной команде... ну, нам. Мы ответим быстрее, чем кот скидывает вещи со стола!</span></p>
-            <p><span class="en"><strong>Just kidding, this form doesn't actually do anything.</strong> But seriously, hit up Max & Mira if you need a cat sitter! 🐱</span>
-<span class="ru"><strong>Шутим, эта форма на самом деле ничего не делает.</strong> Но если вам нужен котоситтер — пишите Максу и Мире! 🐱</span></p>
+            <p><span class="en">Telegram should have opened with your booking details. Just hit send! 🐱</span>
+<span class="ru">Telegram должен был открыться с вашей заявкой. Просто нажмите отправить! 🐱</span></p>
             <button class="modal-close" onclick="closeModal()"><span class="en">Got it, fur real!</span>
 <span class="ru">Понятно, мур!</span></button>
         </div>
@@ -1110,6 +1110,28 @@
         // Form submission
         document.getElementById('enquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Collect form data
+            const form = e.target;
+            const humanName = form.querySelector('input[type="text"]').value;
+            const catName = form.querySelectorAll('input[type="text"]')[1].value;
+            const catTitle = form.querySelector('select').value;
+            const checkIn = form.querySelectorAll('input[type="date"]')[0].value;
+            const checkOut = form.querySelectorAll('input[type="date"]')[1].value;
+            const requirements = form.querySelector('textarea').value;
+            
+            // Build message
+            const message = `🐱 Cat Hotel Booking Request!
+
+Human: ${humanName}
+Cat: ${catName} (${catTitle})
+Dates: ${checkIn} → ${checkOut}
+${requirements ? `Notes: ${requirements}` : ''}`;
+            
+            // Open Telegram with pre-filled message
+            const telegramUrl = `https://t.me/holdn?text=${encodeURIComponent(message)}`;
+            window.open(telegramUrl, '_blank');
+            
             document.getElementById('successModal').classList.add('show');
         });
 
