@@ -35,6 +35,7 @@
         /* Language switching */
         .lang-en .ru, .lang-ru .en { display: none; }
         .lang-en .en, .lang-ru .ru { display: inline; }
+        .lang-en option.ru, .lang-ru option.en { display: none; }
 
         /* Cyrillic font overrides */
         .lang-ru body,
@@ -1013,16 +1014,16 @@
                     <label><span class="en">Cat's Royal Title</span>
 <span class="ru">Королевский титул кота</span></label>
                     <select>
-                        <option><span class="en">Lord/Lady of the Couch</span>
-<span class="ru">Лорд/Леди Дивана</span></option>
-                        <option><span class="en">Duke/Duchess of Destruction</span>
-<span class="ru">Герцог/Герцогиня Разрушения</span></option>
-                        <option><span class="en">Baron/Baroness of the Cardboard Box</span>
-<span class="ru">Барон/Баронесса Картонной Коробки</span></option>
-                        <option><span class="en">Count/Countess of the Keyboard</span>
-<span class="ru">Граф/Графиня Клавиатуры</span></option>
-                        <option><span class="en">His/Her Fluffiness</span>
-<span class="ru">Его/Её Пушистость</span></option>
+                        <option class="en">Lord/Lady of the Couch</option>
+                        <option class="ru">Лорд/Леди Дивана</option>
+                        <option class="en">Duke/Duchess of Destruction</option>
+                        <option class="ru">Герцог/Герцогиня Разрушения</option>
+                        <option class="en">Baron/Baroness of the Cardboard Box</option>
+                        <option class="ru">Барон/Баронесса Картонной Коробки</option>
+                        <option class="en">Count/Countess of the Keyboard</option>
+                        <option class="ru">Граф/Графиня Клавиатуры</option>
+                        <option class="en">His/Her Fluffiness</option>
+                        <option class="ru">Его/Её Пушистость</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -1044,8 +1045,8 @@
                     <label><span class="en">Preferred Room Type</span>
 <span class="ru">Предпочитаемый номер</span></label>
                     <select>
-                        <option><span class="en">Wherever my cat decides to sit</span>
-<span class="ru">Где кот решит сесть</span></option>
+                        <option class="en">Wherever my cat decides to sit</option>
+                        <option class="ru">Где кот решит сесть</option>
                     </select>
                 </div>
                 <button type="submit" class="submit-btn"><span class="en">Submit Booking Request 🐾</span>
@@ -1165,6 +1166,11 @@
             document.title = lang === 'ru' 
                 ? 'Кошачий Отель 🐱 Макс и Мира | Дублин' 
                 : 'Cat Hotel 🐱 by Max & Mira | Dublin';
+            // Update select dropdowns - reset to first visible option
+            document.querySelectorAll('select').forEach(select => {
+                const firstVisible = select.querySelector('option.' + lang);
+                if (firstVisible) select.value = firstVisible.value || firstVisible.text;
+            });
         }
 
         function toggleLang() {
