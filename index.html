@@ -43,20 +43,29 @@
         .lang-en li.en, .lang-ru li.ru { display: list-item; }
 
         .lang-toggle {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
             border: none;
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
+            padding: 0.2rem;
+            border-radius: 20px;
             font-family: 'Fredoka', sans-serif;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             margin-left: 1rem;
+            display: flex;
+            gap: 0;
         }
 
-        .lang-toggle:hover {
-            background: rgba(255,255,255,0.3);
+        .lang-toggle span {
+            padding: 0.3rem 0.6rem;
+            border-radius: 16px;
+            transition: all 0.2s;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .lang-toggle span.active {
+            background: white;
+            color: var(--primary);
         }
 
         /* Floating cats background */
@@ -688,7 +697,10 @@
             <a href="#pricing"><span class="en">Pricing</span><span class="ru">Цены</span></a>
             <a href="#packing"><span class="en">What to Bring</span><span class="ru">Что взять</span></a>
             <a href="#enquiry"><span class="en">Book Meow</span><span class="ru">Забронировать</span></a>
-            <button class="lang-toggle" onclick="toggleLang()">EN | RU</button>
+            <button class="lang-toggle" onclick="toggleLang()">
+                <span id="lang-en" class="active">EN</span>
+                <span id="lang-ru">RU</span>
+            </button>
         </nav>
     </header>
 
@@ -705,7 +717,7 @@
         <p class="tagline"><span class="en">Where every stay is purrfect! ✨ Fur real, your cat will love it here.</span><span class="ru">Где каждый визит мурчателен! ✨ Серьёзно, вашему коту здесь понравится.</span></p>
         <div class="hosts-intro">
             <span class="hero-cat">😺</span>
-            <p class="hosts-text"><span class="en">Hosted with love by</span><span class="ru">С любовью от</span></p>
+            <p class="hosts-text"><span class="en">Hosted with love by</span><span class="ru">С любовью,</span></p>
             <p class="hosts-names"><span class="en">Max & Mira</span><span class="ru">Макс и Мира</span></p>
         </div>
         <p class="tagline"><span class="en">"You're kitten me! This place is the cat's meow!"</span><span class="ru">"Не коти мне! Это место — просто муррр!"</span></p>
@@ -754,43 +766,43 @@
             <div class="testimonial">
                 <div class="testimonial-photo" style="background-image: url('cloud.jpg');"></div>
                 <p class="testimonial-text"><span class="en">The fluffiest stay of my nine lives. Found a plastic bag. Ate it. No regrets. Will return with my entire winter coat.</span><span class="ru">Самый пушистый визит за все мои девять жизней. Нашёл пакет. Съел. Ни о чём не жалею. Вернусь со всей своей зимней шубой.</span></p>
-                <p class="testimonial-author">— Cloud</p>
+                <p class="testimonial-author">— <span class="en">Cloud</span><span class="ru">Клауд</span></p>
                 <p class="testimonial-cat"><span class="en">Majestic Floof, Plastic Bag Connoisseur</span><span class="ru">Величественный пушистик, ценитель пакетов</span></p>
             </div>
             <div class="testimonial">
                 <div class="testimonial-photo" style="background-image: url('chuchu_and_mia.jpg');"></div>
                 <p class="testimonial-text"><span class="en">We came as strangers, we left as... still strangers who tolerate each other. But the chair was excellent. Would judge again.</span><span class="ru">Мы пришли как незнакомцы, ушли как... всё ещё незнакомцы, которые терпят друг друга. Но кресло было отличным. Осудим ещё раз.</span></p>
-                <p class="testimonial-author">— Chuchu & Mia</p>
+                <p class="testimonial-author">— <span class="en">Chuchu & Mia</span><span class="ru">Шушу и Миа</span></p>
                 <p class="testimonial-cat"><span class="en">Dynamic Duo, Chair Acquisition Specialists</span><span class="ru">Динамичный дуэт, специалисты по захвату кресел</span></p>
             </div>
             <div class="testimonial">
                 <div class="testimonial-photo" style="background-image: url('nanysha.jpg');"></div>
                 <p class="testimonial-text"><span class="en">Stayed for 6 months the first time. Came back for round two. The sunbeams here are acceptable. Would recommend to any discerning cat.</span><span class="ru">Первый раз осталась на 6 месяцев. Вернулась на второй раунд. Солнечные лучи здесь приемлемые. Рекомендую любому разборчивому коту.</span></p>
-                <p class="testimonial-author">— Nanysha</p>
+                <p class="testimonial-author">— <span class="en">Nanysha</span><span class="ru">Наныша</span></p>
                 <p class="testimonial-cat"><span class="en">2x Guest, Long-Term Residency Specialist</span><span class="ru">Гость ×2, специалист по долгосрочному проживанию</span></p>
             </div>
             <div class="testimonial">
                 <div class="testimonial-photo" style="background-image: url('semyon.jpg');"></div>
                 <p class="testimonial-text"><span class="en">Came back for a second stay. The mysterious hand-mice under the blanket were fun to hunt. And the humans accept being judged from kitchen counters. Don't read into it.</span><span class="ru">Вернулся во второй раз. Загадочные руко-мыши под одеялом были интересной добычей. А люди спокойно принимают осуждение с кухонной столешницы. Не делайте выводов.</span></p>
-                <p class="testimonial-author">— Semyon</p>
+                <p class="testimonial-author">— <span class="en">Semyon</span><span class="ru">Семён</span></p>
                 <p class="testimonial-cat"><span class="en">2x Guest, Definitely Not Attached</span><span class="ru">Гость ×2, точно не привязался</span></p>
             </div>
             <div class="testimonial">
                 <div class="testimonial-photo" style="background-image: url('stinky.jpg');"></div>
                 <p class="testimonial-text"><span class="en">17 blankets provided. 17 blankets used. The heating was acceptable. My wrinkles remained moisturized. These humans get it.</span><span class="ru">17 пледов предоставлено. 17 пледов использовано. Отопление приемлемое. Мои складки остались увлажнёнными. Эти люди понимают.</span></p>
-                <p class="testimonial-author">— Stinky</p>
+                <p class="testimonial-author">— <span class="en">Stinky</span><span class="ru">Стинки</span></p>
                 <p class="testimonial-cat"><span class="en">Hairless Royalty, Warmth Enthusiast</span><span class="ru">Безшёрстная особа, любитель тепла</span></p>
             </div>
             <div class="testimonial">
                 <div class="testimonial-photo" style="background-image: url('lumos.jpg');"></div>
                 <p class="testimonial-text"><span class="en">Great sink. Great bathroom. Tried to leave via window once - not to escape, just to check if outside was better. It wasn't. Came back to the sink. No regrets. Mostly.</span><span class="ru">Отличная раковина. Отличная ванная. Один раз попытался уйти через окно — не сбежать, просто проверить, лучше ли снаружи. Не лучше. Вернулся в раковину. Ни о чём не жалею. Почти.</span></p>
-                <p class="testimonial-author">— Lumos</p>
+                <p class="testimonial-author">— <span class="en">Lumos</span><span class="ru">Люмус</span></p>
                 <p class="testimonial-cat"><span class="en">Sink Enthusiast, Amateur Escape Artist</span><span class="ru">Ценитель раковин, начинающий беглец</span></p>
             </div>
             <div class="testimonial">
                 <div class="testimonial-photo" style="background-image: url('steve.jpg');"></div>
                 <p class="testimonial-text"><span class="en">I found snacks. They said they weren't for me. I disagreed. We reached a compromise (I got the box). Excellent negotiation environment.</span><span class="ru">Нашёл вкусняшки. Сказали, что не для меня. Я не согласился. Мы пришли к компромиссу (мне досталась коробка). Отличная атмосфера для переговоров.</span></p>
-                <p class="testimonial-author">— Steve</p>
+                <p class="testimonial-author">— <span class="en">Steve</span><span class="ru">Стив</span></p>
                 <p class="testimonial-cat"><span class="en">Snack Security Officer, Box Inspector</span><span class="ru">Офицер охраны вкусняшек, инспектор коробок</span></p>
             </div>
         </div>
@@ -1013,6 +1025,9 @@
                 url.searchParams.set('lang', lang);
             }
             window.history.replaceState({}, '', url);
+            // Update toggle button
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
         }
 
         function toggleLang() {
